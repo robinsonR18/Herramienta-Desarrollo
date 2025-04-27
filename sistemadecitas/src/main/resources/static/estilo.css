@@ -1,0 +1,47 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #da9964 url('image/foto2.png') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.inicio .btn {
+    border-radius: 50px;
+    background: #ff93c7;
+    color: white;
+    padding: 0.9rem 3.5rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.inicio .btn:hover {
+    background-color: rgb(238, 113, 134);
+}
+
+.heading {
+    font-size: 2rem;
+    background-color: pink;
+    padding: 1rem 0;
+}
+
+.btn1 {
+    display: block;
+    margin: 2rem auto;
+    border-radius: 50px;
+    background: #ff93c7;
+    color: white;
+    padding: 0.9rem 3.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.btn1:hover {
+    background-color: rgb(238, 113, 134);
+}

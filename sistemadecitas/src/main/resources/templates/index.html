@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <div th:replace="fragments :: navbar"></div>
+    </header>
+    <section>
+        <section class="inicio" id="inicio">
+            <div class="content">
+                <h3>Rossy </h3>
+                <span>
+                    <h3>Barberia y Peluqueria</h3>
+                </span>
+                <a href="#nosotros" class="btn">conocenos</a>
+            </div>
+        </section>
+    </section>
+    <section style="margin-top: 15px;">
+        <h1 class="heading text-center" style="background-color: rgb(255, 236, 239);"><span> Bienvenidos a Rossy </span> </h1>
+    </section>    
+    <section>
+        <div id="nosotros" class="nosotros">
+            <!-- Academia inicio -->
+            <section class="nosotros py-5">
+                <div class="container-fluid">
+                    <h2 class="text-center mb-5">¿Quiénes Somos?</h2>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <img src="image/foto3.jpg" class="img-fluid rounded" style="width: 100%; max-height: 400px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-6">
+                            <p style="font-size: 1.2rem; line-height: 1.8;">
+                                Bienvenidos a Rossy Barbería y Peluquería,
+                                donde combinamos tradición e innovación
+                                en el cuidado personal. Con 16 años de
+                                experiencia, somos un referente en
+                                estilismo y barbería, ofreciendo
+                                excelencia y un ambiente acogedor.
+                                Más que cortes y peinados, brindamos
+                                una experiencia integral de bienestar y
+                                satisfacción. Gracias a la confianza de
+                                nuestros clientes, hemos crecido y evolucionado.
+                                ¡Visítanos y descubre por qué somos el lugar ideal para renovar tu imagen!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </section>
+    <section>
+        <h1 class="heading text-center" style="background-color: rgb(255, 236, 239);">Nuestros Servicios</h1>
+    </section>
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Card Corte de Cabello -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 text-center shadow-sm border-0">
+                        <a href="reserva.html">
+                            <img src="image/corte.jpg" class="card-img-top img-fluid" alt="Corte de Cabello"
+                                style="cursor: pointer;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Corte de Cabello</h5>
+                            <p class="card-text">
+                                Servicios personalizados de corte para damas, caballeros y niños. Asesoramiento
+                                profesional para un look moderno y favorecedor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Maquillaje Profesional -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 text-center shadow-sm border-0">
+                        <a href="reserva.html">
+                            <img src="image/belleza.jpg" class="card-img-top img-fluid" alt="Maquillaje Profesional"
+                                style="cursor: pointer;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Maquillaje Profesional</h5>
+                            <p class="card-text">
+                                Ideal para eventos especiales como bodas, fiestas y sesiones fotográficas. Trabajamos
+                                con productos de alta gama para un acabado perfecto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Tratamientos Faciales -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 text-center shadow-sm border-0">
+                        <a href="reserva.html">
+                            <img src="image/facial.jpg" class="card-img-top img-fluid" alt="Tratamientos Faciales"
+                                style="cursor: pointer;">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Tratamientos Faciales</h5>
+                            <p class="card-text">
+                                Limpiezas profundas, hidratación, antiacné y rejuvenecimiento. Nuestro equipo analiza tu
+                                piel para ofrecerte el tratamiento ideal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-4">
+            <a th:href="@{/servicios}" class="btn btn-sm btn-primary">Reserva Cita</a>
+        </div>
+    </section>
+    <section id="productos" class="py-5">
+        <h2 class="heading text-center" style="background-color: rgb(255, 236, 239)">Nuestros Productos</h2>
+        <div class="container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="image/producto7.jpg" class="img-fluid" alt="Producto 1"></div>
+                    <div class="swiper-slide"><img src="image/producto2.jpg" class="img-fluid" alt="Producto 2"></div>
+                    <div class="swiper-slide"><img src="image/producto3.jpg" class="img-fluid" alt="Producto 3"></div>
+                    <div class="swiper-slide"><img src="image/producto4.jpg" class="img-fluid" alt="Producto 4"></div>
+                    <div class="swiper-slide"><img src="image/producto5.jpg" class="img-fluid" alt="Producto 5"></div>
+                    <div class="swiper-slide"><img src="image/producto6.jpg" class="img-fluid" alt="Producto 6"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Solicita Más Información</h2>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <!--footer-->
+    <div th:replace="fragments :: footer"></div>
+    <!--fin footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="carousel.js" defer></script> <!-- si tienes uno propio -->
+</body>
+</html>

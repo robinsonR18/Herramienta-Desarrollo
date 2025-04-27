@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* Estilo CSS personalizado para las imágenes */
+        .imagen-servicio {
+    width: 100%;           /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto;          /* Establece la altura automáticamente según el ancho */
+    aspect-ratio: 16 / 9;  /* Establece una relación de aspecto 16:9 */
+    object-fit: cover;     /* Asegura que la imagen se recorte para llenar el área sin distorsionarse */
+    object-position: center; /* Centra la imagen */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div th:replace="fragments :: navbar"></div>
+    </header>
+    <!-- Fin Navbar -->
+
+    <!-- Contenedor de los servicios -->
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Lista de Servicios</h1>
+
+        <div class="row">
+            <!-- Aquí se iteran los servicios -->
+            <div class="col-md-4 col-sm-6 mb-4" th:each="servicio : ${servicios}">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <!-- Imagen con clase personalizada -->
+                        <img th:src="@{${servicio.imagenUrl}}" alt="Imagen de {servicio.nombre}" class="imagen-servicio">
+                        <h5 class="card-title" th:text="${servicio.nombre}">Nombre del Servicio</h5>
+                        <p class="card-text" th:text="${servicio.descripcion}">Descripción del servicio.</p>
+                        <p class="card-text"><strong>Duración:</strong> <span th:text="${servicio.duracion}">30</span> minutos</p>
+                        <p class="card-text"><strong>Precio:</strong> $<span th:text="${servicio.precio}">100</span></p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="/reservar" class="btn btn-primary w-100">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments :: footer"></div>
+    <!-- Fin Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</body>
+</html>

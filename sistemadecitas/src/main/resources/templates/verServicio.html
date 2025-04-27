@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Servicios</title>
+    <!-- Enlace a Bootstrap 5.3.5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Lista de Servicios</h1>
+
+        <!-- Tabla de Servicios -->
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre del Servicio</th>
+                        <th>Descripción</th>
+                        <th>Duración (min)</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="servicio : ${servicios}">
+                        <td th:text="${servicio.nombre}"></td>
+                        <td th:text="${servicio.descripcion}"></td>
+                        <td th:text="${servicio.duracion}"></td>
+                        <td th:text="'$' + ${servicio.precio}"></td>
+                        <td>
+                            <a href="#" th:href="@{/servicios/editar/{id}(id=${servicio.id})}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="#" th:href="@{/servicios/eliminar/{id}(id=${servicio.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
