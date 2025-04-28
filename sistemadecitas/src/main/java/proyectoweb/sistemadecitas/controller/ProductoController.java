@@ -63,7 +63,7 @@ public class ProductoController {
                 // Si no tiene ID, es una creación
                 productoService.guardarProducto(producto);
             }
-            return "redirect:/crearProducto"; // Redirigir al catálogo después de guardar
+            return "redirect:/catalogo"; // Redirigir al catálogo después de guardar
         } catch (Exception e) {
             e.printStackTrace();  // Log del error para depuración
             return "error";  // Vista personalizada de error

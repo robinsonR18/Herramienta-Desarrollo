@@ -1,6 +1,7 @@
 package proyectoweb.sistemadecitas.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,11 @@ public class ServicioService {
             return servicioRepository.save(servicio);
         }
         throw new IllegalArgumentException("Servicio no encontrado para actualizar");
+    }
+
+    public Optional<Servicio> obtenerServicioPorId(Long id) {
+        
+        return servicioRepository.findById(id);
+
     }
 }

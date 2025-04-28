@@ -31,8 +31,7 @@
                         <td th:text="${servicio.duracion}"></td>
                         <td th:text="'$' + ${servicio.precio}"></td>
                         <td>
-                            <a href="#" th:href="@{/servicios/editar/{id}(id=${servicio.id})}" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="#" th:href="@{/servicios/eliminar/{id}(id=${servicio.id})}" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a href="#" th:href="@{/editarServicio/{id}(id=${servicio.id})}" class="btn btn-warning btn-sm">Editar</a>
                         </td>
                     </tr>
                 </tbody>
